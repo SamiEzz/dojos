@@ -19,6 +19,11 @@ def randomise(_list):
 
 
 def findIt(a, b, c, chosenNum):
+    for k in range(len(a)):
+        print(str(a[k])+"\t\t"+str(b[k])+"\t\t"+str(c[k]))
+    print("[1]\t\t[2]\t\t[3]")
+    return int(input("Finahia : "))
+    """
     for i in range(len(a)):
         if(a[i] == chosedNum):
             return isInA
@@ -26,6 +31,7 @@ def findIt(a, b, c, chosenNum):
             return isInB
         if(c[i] == chosedNum):
             return isInC
+    """
 
 
 def reDms(a, b, c, whereItIs):
@@ -48,22 +54,20 @@ def reDivise(a, b, c, randomList):
         c.append(randomList[i*3+2])
 
 
-while(1):
-    randomList = randomise(list)
-    chosedNum = randint(0, 20)
-    #chosedNum = 0
-    print(chosedNum)
-    for k in range(4):
-        a = []
-        b = []
-        c = []
-        for i in range(7):
-            a.append(randomList[i*3])
-            b.append(randomList[i*3+1])
-            c.append(randomList[i*3+2])
-        isInPile = findIt(a, b, c, chosedNum)
-        randomList = reDms(a, b, c, isInPile)
-        reDivise(a, b, c, randomList)
-
-    print(randomList[10])
-    print("___________")
+randomList = randomise(list)
+#chosedNum = randint(0, 20)
+#chosedNum = 0
+# print(chosedNum)
+for k in range(4):
+    a = []
+    b = []
+    c = []
+    for i in range(7):
+        a.append(randomList[i*3])
+        b.append(randomList[i*3+1])
+        c.append(randomList[i*3+2])
+    isInPile = findIt(a, b, c, 0)
+    randomList = reDms(a, b, c, isInPile)
+    reDivise(a, b, c, randomList)
+print(randomList[10])
+print("___________")
